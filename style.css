@@ -6,6 +6,10 @@
   --color-ternary: #87baba;
 }
 
+html {
+  -webkit-text-size-adjust: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -54,13 +58,14 @@ p {
 
 #cv {
   position: relative;
-  width: 1100px;
+  width: 90%;
   display: grid;
-  grid-template-columns: 20px 350px 1fr;
+  grid-template-columns: 20px 2fr 4fr;
   grid-template-rows: 260px 1fr;
   box-shadow: -10px 10px 1px #00000044;
   background-color: white;
   transform: scale(0.9);
+  min-width: 600px;
 }
 
 #top-row-background {
