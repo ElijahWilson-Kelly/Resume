@@ -8,6 +8,7 @@
 
 html {
   -webkit-text-size-adjust: none;
+  font-size: 13px;
 }
 
 * {
@@ -48,63 +49,55 @@ h3 {
 }
 
 h4 {
+  font-size: 1rem;
   margin: 10px 0px;
 }
 
 p {
+  font-size: 0.8rem;
   margin: 10px 0;
-  font-size: 1rem;
 }
 
 #cv {
   position: relative;
-  width: 90%;
+  width: 100%;
+  min-width: 300px;
   display: grid;
-  grid-template-columns: 20px 2fr 4fr;
-  grid-template-rows: 260px 1fr;
-  box-shadow: -10px 10px 1px #00000044;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px auto auto;
   background-color: white;
-  transform: scale(0.8);
-  min-width: 600px;
 }
 
-#top-row-background {
+#primary-color-background {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  background-color: var(--color-primary);
+}
+
+#secondary-color-background {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
   background-color: var(--color-secondary);
 }
 
-#left-column-background {
-  grid-column: 2 / 3;
-  grid-row: 1 / -1;
-  background-color: var(--color-primary);
-}
-
 #header {
-  grid-column: 2 / -1;
+  grid-column: 1 / -1;
   grid-row: 1 / 2;
-  padding-left: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#personal-infomation {
-  grid-column: 2 / 3;
-  grid-row: 1 / -1;
+#personal-information {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
   position: relative;
-  padding: 40px;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  gap: 80px;
+  padding: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   color: white;
-}
-
-#main-content {
-  grid-column: 3 / -1;
-  grid-row: 2 / -1;
 }
 
 .img-box {
@@ -113,6 +106,7 @@ p {
   border: 1px solid rgb(255, 255, 255);
   background-color: white;
   border-radius: 50%;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,7 +137,14 @@ p {
 }
 
 .contact-container {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
   width: 100%;
+}
+
+.about-me {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
 }
 
 .category {
@@ -185,5 +186,65 @@ p {
 
 .skills,
 .languages {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+}
+
+/* 
+ Media Queries
+ */
+
+/* Tablet */
+
+@media only screen and (min-width: 641px) {
+  html {
+    font-size: 14px;
+  }
+
+  #cv {
+    display: grid;
+    grid-template-columns: 20px 2fr 4fr;
+    grid-template-rows: 260px 1fr;
+  }
+
+  #header {
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+  }
+
+  #personal-information {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #main-content {
+    grid-column: 3 / -1;
+    grid-row: 2 / -1;
+  }
+
+  #primary-color-background {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+  }
+
+  #secondary-color-background {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+}
+
+/* Laptop */
+
+@media only screen and (min-width: 961px) {
+  html {
+    font-size: 16px;
+  }
+
+  #cv {
+    margin: 50px 0;
+    width: 961px;
+    box-shadow: -10px 10px 1px #00000044;
+  }
 }
