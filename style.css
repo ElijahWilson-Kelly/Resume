@@ -175,6 +175,11 @@ p {
   margin-right: 10px;
 }
 
+.experience-item {
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+}
+
 .role {
   color: rgb(7, 7, 121);
 }
@@ -186,7 +191,7 @@ p {
 
 .skills,
 .languages {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 /* 
